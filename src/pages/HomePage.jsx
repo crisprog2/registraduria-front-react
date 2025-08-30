@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import './HomePage.css';
 import Navbar from '../components/Navbar';
 import { buscarPersonaPorCedula } from '../api/personas';
+import ResultadoElectoralCard from '../components/ResultadoElectoralCard';
 
 const HomePage = () => {
   const [cedula, setCedula] = useState('');
@@ -82,22 +83,7 @@ const HomePage = () => {
           </form>
           {error && <div className="consulta-error">{error}</div>}
           {resultado && (
-            <div className="consulta-resultado">
-              <h3>Resultado</h3>
-              <div><b>Nombre:</b> {[
-                resultado.primer_nombre,
-                resultado.segundo_nombre,
-                resultado.primer_apellido,
-                resultado.segundo_apellido
-              ].filter(Boolean).join(' ') || '-'}</div>
-              <div><b>Cédula:</b> {resultado.cedula || '-'}</div>
-              <div><b>Género:</b> {resultado.genero === 'm' ? 'Masculino' : resultado.genero === 'f' ? 'Femenino' : '-'}</div>
-              <div><b>Departamento:</b> {resultado.departamento || '-'}</div>
-              <div><b>Ciudad:</b> {resultado.ciudad || '-'}</div>
-              <div><b>Lugar de votación:</b> {resultado.direccion_lugar_votacion || '-'}</div>
-              <div><b>Mesa:</b> {resultado.mesa_votacion || '-'}</div>
-              <div><b>¿Es jurado?:</b> {resultado.es_jurado === 'Y' ? 'Sí' : resultado.es_jurado === 'N' ? 'No' : '-'}</div>
-            </div>
+            <ResultadoElectoralCard resultado={resultado} />
           )}
         </section>
         <div className="home-info-cards">
