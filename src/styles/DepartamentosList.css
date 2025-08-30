@@ -1,0 +1,33 @@
+.departamentos-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f7fafc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.departamentos-table th, .departamentos-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.departamentos-table td:first-child, .departamentos-table th:first-child {
+  min-width: 60px;
+  width: 80px;
+  font-family: monospace;
+}
+
+.departamentos-table th {
+  background: #2d3748;
+  color: #fff;
+  font-weight: 600;
+}
+
+.departamentos-table tr:nth-child(even) {
+  background: #e2e8f0;
+}
+
+.departamentos-table tr:hover {
+  background: #cbd5e1;
+}

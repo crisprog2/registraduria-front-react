@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => (
+const Navbar = ({ onInicioClick }) => (
   <header className="main-header">
     <div className="logo">
       <span role="img" aria-label="urna">🗳️</span>
@@ -10,7 +10,9 @@ const Navbar = () => (
     </div>
     <nav>
       <ul>
-        <li><Link to="/">Inicio</Link></li>
+        <li>
+          <Link to="/" onClick={onInicioClick}>Inicio</Link>
+        </li>
         <li className="dropdown">
           <span>Departamento ▾</span>
           <ul className="dropdown-content">
@@ -24,7 +26,7 @@ const Navbar = () => (
             <li><Link to="/ciudades">Consultar Lista</Link></li>
           </ul>
         </li>
-  <li><Link to="/acerca">Acerca de</Link></li>
+        <li><Link to="/acerca">Acerca de</Link></li>
       </ul>
     </nav>
   </header>

@@ -1,5 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
 import { getDepartamentos } from '../api/departamentos';
+import '../styles/DepartamentosList.css';
 
 const DepartamentosList = () => {
   const [departamentos, setDepartamentos] = useState([]);
@@ -23,7 +25,7 @@ const DepartamentosList = () => {
 
   return (
     <div className="departamentos-table-container">
-      <table className="departamentos-table departamentos-table-simple">
+      <table className="departamentos-table">
         <thead>
           <tr>
             <th>Código</th>

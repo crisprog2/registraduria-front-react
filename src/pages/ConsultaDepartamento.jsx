@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import { getDepartamentoByCodigo } from '../api/departamentos';
-import './ConsultaDepartamento.css';
 import Navbar from '../components/Navbar';
+import '../pages/HomePage.css';
+
 
 const ConsultaDepartamento = () => {
   const [codigo, setCodigo] = useState('');
@@ -16,22 +18,26 @@ const ConsultaDepartamento = () => {
     setLoading(true);
     try {
       const data = await getDepartamentoByCodigo(codigo);
-      setDepartamento(data);
+      if (data && data.departamento) {
+        setDepartamento(data);
+      } else {
+        setError('Departamento no encontrado');
+      }
     } catch (err) {
-      setError('Departamento no encontrado');
+      setError('Error al consultar el departamento');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f7fafc', display: 'flex', flexDirection: 'column' }}>
+    <div className="home-bg">
       <Navbar />
-      <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 16px' }}>
-        <section style={{ maxWidth: 600, width: '100%', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px', textAlign: 'center' }}>
-          <h2 style={{ color: '#2d3748', fontSize: '2rem', marginBottom: 18 }}>Consulta Departamento</h2>
+      <main className="main-content">
+        <section className="consulta-card" style={{maxWidth: 600}}>
+          <h2 style={{ color: '#1a202c', fontSize: '2rem', textAlign: 'center', marginBottom: 18, fontWeight: 800, letterSpacing: '-1px' }}>Consulta Departamento</h2>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="codigo">Código de departamento</label>
+            <label htmlFor="codigo" className="consulta-label">Código de departamento</label>
             <input
               id="codigo"
               type="text"
@@ -39,16 +45,16 @@ const ConsultaDepartamento = () => {
               onChange={e => setCodigo(e.target.value)}
               placeholder="Ej: 11"
               required
-              style={{ width: '100%', margin: '12px 0 18px 0', padding: 10, borderRadius: 6, border: '1px solid #ccc' }}
+              className="consulta-input"
             />
-            <button type="submit" disabled={loading} style={{ width: '100%', background: '#111827', color: '#fff', border: 'none', borderRadius: 6, padding: 12, fontWeight: 600, fontSize: '1rem', cursor: 'pointer' }}>{loading ? 'Consultando...' : 'Consultar'}</button>
+            <button type="submit" className="consulta-btn" disabled={loading}>{loading ? 'Consultando...' : 'Consultar'}</button>
           </form>
           {departamento && (
-            <div className="resultado" style={{ marginTop: 18, fontSize: '1.1rem' }}>
+            <div className="consulta-resultado" style={{marginTop: 18}}>
               <strong>Nombre:</strong> {departamento.departamento}
             </div>
           )}
-          {error && <div className="error" style={{ marginTop: 12, color: '#e53e3e' }}>{error}</div>}
+          {error && <div className="consulta-error" style={{marginTop: 12}}>{error}</div>}
         </section>
       </main>
     </div>
