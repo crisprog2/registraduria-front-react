@@ -83,7 +83,9 @@ const HomePage = () => {
           </form>
           {error && <div className="consulta-error">{error}</div>}
           {resultado && (
-            <ResultadoElectoralCard resultado={resultado} />
+            <div className="resultado-electoral-card-wrapper">
+              <ResultadoElectoralCard resultado={resultado} />
+            </div>
           )}
         </section>
         <div className="home-info-cards">
