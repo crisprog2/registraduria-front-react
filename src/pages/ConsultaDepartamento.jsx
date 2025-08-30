@@ -25,10 +25,10 @@ const ConsultaDepartamento = () => {
   };
 
   return (
-    <>
+    <div style={{ minHeight: '100vh', background: '#f7fafc', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
-      <main>
-        <section style={{ maxWidth: 600, margin: '48px auto', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px', textAlign: 'center' }}>
+      <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 16px' }}>
+        <section style={{ maxWidth: 600, width: '100%', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px', textAlign: 'center' }}>
           <h2 style={{ color: '#2d3748', fontSize: '2rem', marginBottom: 18 }}>Consulta Departamento</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="codigo">Código de departamento</label>
@@ -51,7 +51,7 @@ const ConsultaDepartamento = () => {
           {error && <div className="error" style={{ marginTop: 12, color: '#e53e3e' }}>{error}</div>}
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

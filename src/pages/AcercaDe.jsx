@@ -13,9 +13,9 @@ const cardStyle = {
 
 
 const AcercaDe = () => (
-  <div style={{ minHeight: '100vh', background: '#f7fafc' }}>
+  <div style={{ minHeight: '100vh', background: '#f7fafc', display: 'flex', flexDirection: 'column' }}>
     <Navbar />
-    <main>
+    <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 16px' }}>
       <section style={cardStyle}>
         <h1 style={{ color: '#2d3748', fontSize: '2.2rem', marginBottom: 18 }}>Acerca de Consulta de Votación</h1>
         <p style={{ fontSize: '1.15rem', color: '#444', marginBottom: 24 }}>
