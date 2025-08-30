@@ -1,0 +1,82 @@
+.acerca-bg {
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+.acerca-main {
+  max-width: 700px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.acerca-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  text-align: center;
+}
+
+.acerca-card h1 {
+  color: #2d3748;
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+}
+
+.acerca-desc {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.acerca-list {
+  text-align: left;
+  margin: 0 auto 28px auto;
+  max-width: 500px;
+  padding-left: 0;
+}
+
+.acerca-list li {
+  font-size: 1.08rem;
+  margin-bottom: 10px;
+  color: #2d3748;
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+}
+.acerca-list li:before {
+  content: '•';
+  color: #3182ce;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.acerca-info h2 {
+  color: #3182ce;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.acerca-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.acerca-tags span {
+  background: #e2e8f0;
+  color: #2d3748;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.acerca-footer {
+  margin-top: 24px;
+  color: #888;
+  font-size: 0.98rem;
+}

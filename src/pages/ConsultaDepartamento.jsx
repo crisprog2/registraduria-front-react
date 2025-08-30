@@ -27,9 +27,9 @@ const ConsultaDepartamento = () => {
   return (
     <>
       <Navbar />
-      <div className="consulta-departamento-bg">
-        <div className="consulta-card">
-          <h2>Consulta Departamento</h2>
+      <main>
+        <section style={{ maxWidth: 600, margin: '48px auto', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px', textAlign: 'center' }}>
+          <h2 style={{ color: '#2d3748', fontSize: '2rem', marginBottom: 18 }}>Consulta Departamento</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="codigo">Código de departamento</label>
             <input
@@ -39,17 +39,18 @@ const ConsultaDepartamento = () => {
               onChange={e => setCodigo(e.target.value)}
               placeholder="Ej: 11"
               required
+              style={{ width: '100%', margin: '12px 0 18px 0', padding: 10, borderRadius: 6, border: '1px solid #ccc' }}
             />
-            <button type="submit" disabled={loading}>{loading ? 'Consultando...' : 'Consultar'}</button>
+            <button type="submit" disabled={loading} style={{ width: '100%', background: '#111827', color: '#fff', border: 'none', borderRadius: 6, padding: 12, fontWeight: 600, fontSize: '1rem', cursor: 'pointer' }}>{loading ? 'Consultando...' : 'Consultar'}</button>
           </form>
           {departamento && (
-            <div className="resultado">
+            <div className="resultado" style={{ marginTop: 18, fontSize: '1.1rem' }}>
               <strong>Nombre:</strong> {departamento.departamento}
             </div>
           )}
-          {error && <div className="error">{error}</div>}
-        </div>
-      </div>
+          {error && <div className="error" style={{ marginTop: 12, color: '#e53e3e' }}>{error}</div>}
+        </section>
+      </main>
     </>
   );
 };

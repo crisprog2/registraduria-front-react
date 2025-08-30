@@ -7,15 +7,15 @@ import './DepartamentosPage.css';
 
 const DepartamentosPage = () => {
   return (
-    <div className="home-bg">
-  <Navbar />
-      <main className="main-content">
-        <div className="departamentos-page">
-          <h2>Departamentos</h2>
+    <div style={{ minHeight: '100vh', background: '#f7fafc' }}>
+      <Navbar />
+      <main>
+        <section style={{ maxWidth: 700, margin: '48px auto', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px' }}>
+          <h2 style={{ color: '#2d3748', fontSize: '2rem', textAlign: 'center', marginBottom: 18 }}>Departamentos</h2>
           <div className="departamentos-list-container">
             <DepartamentosList />
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

@@ -31,16 +31,18 @@ const CiudadesPage = () => {
   return (
     <>
       <Navbar />
-      <div className="ciudades-page">
-        <h2>Ciudades</h2>
-        <div className="ciudades-table-container">
-          {loading && <p>Cargando...</p>}
-          {error && <p>{error}</p>}
-          {!loading && !error && (
-            <CiudadesList ciudades={ciudades} />
-          )}
-        </div>
-      </div>
+      <main>
+        <section style={{ maxWidth: 700, margin: '48px auto', background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '40px 32px 32px 32px' }}>
+          <h2 style={{ color: '#2d3748', fontSize: '2rem', textAlign: 'center', marginBottom: 18 }}>Ciudades</h2>
+          <div className="ciudades-table-container">
+            {loading && <p>Cargando...</p>}
+            {error && <p>{error}</p>}
+            {!loading && !error && (
+              <CiudadesList ciudades={ciudades} />
+            )}
+          </div>
+        </section>
+      </main>
     </>
   );
 };
