@@ -15,6 +15,39 @@
   margin-top: 40px;
   text-align: center;
 }
+
+@media (max-width: 700px) {
+  .consulta-departamento-bg {
+    align-items: flex-start;
+    padding: 0 0 24px 0;
+    min-height: unset;
+  }
+  .consulta-card {
+    min-width: 0;
+    max-width: 99vw;
+    padding: 18px 6px 16px 6px;
+    font-size: 0.98rem;
+    margin-top: 18px;
+  }
+  .consulta-card h2 {
+    font-size: 1.2rem;
+  }
+  .consulta-card label {
+    font-size: 0.98rem;
+  }
+  .consulta-card input {
+    font-size: 0.98rem;
+    padding: 8px 8px;
+  }
+  .consulta-card button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .resultado {
+    font-size: 0.98rem;
+    padding: 10px;
+  }
+}
 .consulta-card h2 {
   margin-bottom: 18px;
   color: #222;

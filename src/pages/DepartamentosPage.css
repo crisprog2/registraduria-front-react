@@ -78,6 +78,30 @@
   padding: 32px 24px;
 }
 
+@media (max-width: 700px) {
+  .departamentos-page {
+    max-width: 99vw;
+    margin: 18px auto;
+    padding: 12px 4px;
+    font-size: 0.98rem;
+  }
+  .departamentos-page h2 {
+    font-size: 1.2rem;
+  }
+  .departamentos-list-container li {
+    font-size: 0.98rem;
+    padding: 10px 8px;
+  }
+  .departamentos-table-simple th, .departamentos-table-simple td {
+    font-size: 0.98rem;
+    padding: 8px 4px;
+  }
+  .departamentos-table-simple {
+    min-width: 400px;
+    font-size: 0.98rem;
+  }
+}
+
 .departamentos-page h2 {
   text-align: center;
   margin-bottom: 24px;

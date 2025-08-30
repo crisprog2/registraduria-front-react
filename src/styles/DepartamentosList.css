@@ -7,6 +7,11 @@
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
+.departamentos-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .departamentos-table th, .departamentos-table td {
   padding: 14px 18px;
   text-align: left;
@@ -30,4 +35,15 @@
 
 .departamentos-table tr:hover {
   background: #cbd5e1;
+}
+
+@media (max-width: 700px) {
+  .departamentos-table th, .departamentos-table td {
+    padding: 8px 6px;
+    font-size: 0.98rem;
+  }
+  .departamentos-table {
+    min-width: 400px;
+    font-size: 0.98rem;
+  }
 }

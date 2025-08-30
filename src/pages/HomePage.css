@@ -38,6 +38,48 @@ body, html, #root {
   overflow-x: hidden;
 }
 
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 32px 0 0 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .main-content {
+    padding: 8px 0 0 0;
+    min-height: unset;
+  }
+  .consulta-card, .consulta-card-mockup {
+    min-width: 0;
+    max-width: 99vw;
+    padding: 18px 6px 16px 6px;
+    font-size: 0.98rem;
+    box-sizing: border-box;
+  }
+  .home-header .home-title {
+    font-size: 1.3rem;
+  }
+  .home-header .home-subtitle {
+    font-size: 1rem;
+  }
+  .home-info-cards {
+    gap: 10px;
+    max-width: 99vw;
+  }
+  .info-card {
+    min-width: 0;
+    max-width: 99vw;
+    padding: 12px 6px 10px 6px;
+    font-size: 0.98rem;
+  }
+}
+
 .main-header {
   width: 100%;
   background: #fff;

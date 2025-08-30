@@ -17,6 +17,41 @@
   text-align: center;
 }
 
+@media (max-width: 700px) {
+  .acerca-main {
+    margin: 18px auto;
+    padding: 0 4px;
+  }
+  .acerca-card {
+    padding: 18px 6px 16px 6px;
+    font-size: 0.98rem;
+  }
+  .acerca-card h1 {
+    font-size: 1.3rem;
+  }
+  .acerca-desc {
+    font-size: 1rem;
+  }
+  .acerca-list {
+    max-width: 99vw;
+    font-size: 0.98rem;
+    padding-left: 0;
+  }
+  .acerca-list li {
+    font-size: 0.98rem;
+    padding-left: 18px;
+  }
+  .acerca-tags {
+    gap: 6px;
+    flex-wrap: wrap;
+    max-width: 99vw;
+  }
+  .acerca-tags span {
+    font-size: 0.95rem;
+    padding: 5px 10px;
+  }
+}
+
 .acerca-card h1 {
   color: #2d3748;
   font-size: 2.2rem;
