@@ -1,3 +1,36 @@
+.departamentos-table-simple {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin: 0 auto;
+}
+.departamentos-table-simple th {
+  background: #222c3c;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.departamentos-table-simple td {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 1.08rem;
+  color: #222;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f7fafc;
+}
+.departamentos-table-simple tr:nth-child(even) td {
+  background: #e9eef6;
+}
+.departamentos-table-simple tr:last-child td {
+  border-bottom: none;
+}
 .departamentos-table-container {
   margin-top: 24px;
 }
@@ -11,9 +44,16 @@
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
+
 .departamentos-table th, .departamentos-table td {
   padding: 14px 18px;
   text-align: left;
+}
+
+.departamentos-table td:first-child, .departamentos-table th:first-child {
+  min-width: 60px;
+  width: 80px;
+  font-family: monospace;
 }
 
 .departamentos-table th {

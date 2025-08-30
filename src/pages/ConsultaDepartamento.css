@@ -1,0 +1,69 @@
+.consulta-departamento-bg {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f6fa;
+}
+.consulta-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 36px 32px 32px 32px;
+  min-width: 350px;
+  max-width: 400px;
+  margin-top: 40px;
+  text-align: center;
+}
+.consulta-card h2 {
+  margin-bottom: 18px;
+  color: #222;
+}
+.consulta-card label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 1rem;
+  text-align: left;
+}
+.consulta-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.consulta-card input:focus {
+  border: 1.5px solid #0a1128;
+}
+.consulta-card button {
+  width: 100%;
+  padding: 12px 0;
+  background: #0a1128;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.consulta-card button:hover {
+  background: #1a202c;
+}
+.resultado {
+  margin-top: 18px;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 14px;
+  color: #222;
+}
+.error {
+  margin-top: 18px;
+  color: #c00;
+  font-weight: 600;
+}

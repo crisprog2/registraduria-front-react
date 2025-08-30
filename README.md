@@ -28,8 +28,19 @@ Este proyecto es una aplicación web desarrollada en React + Vite para consultar
 
 - `src/pages/HomePage.jsx`: Página principal con formulario y menú.
 - `src/pages/DepartamentosPage.jsx`: Página para listar departamentos.
-- `src/components/DepartamentosList.jsx`: Componente que consume la API y muestra los departamentos en tabla.
-- `src/api/`: Lógica para consumir la API del backend (Axios).
+- `src/pages/CiudadesPage.jsx`: Página para listar ciudades.
+- `src/pages/ConsultaDepartamento.jsx`: Consulta un departamento por código usando función centralizada.
+- `src/components/DepartamentosList.jsx`: Componente que muestra los departamentos en tabla.
+- `src/components/CiudadesList.jsx`: Componente que muestra las ciudades en tabla.
+- `src/api/`: Lógica centralizada para consumir la API del backend (Axios). Todas las funciones para endpoints están aquí.
+
+
+## Buenas prácticas y organización
+
+- Todas las llamadas a la API están centralizadas en la carpeta `src/api`.
+- No se usa Axios ni fetch directamente en páginas o componentes, solo funciones de la API.
+- Ejemplo: para consultar un departamento por código, usa `getDepartamentoByCodigo` desde `src/api/departamentos.js`.
+- Los estilos de las tablas de departamentos y ciudades están unificados para una apariencia consistente.
 
 ## Configuración de la API
 

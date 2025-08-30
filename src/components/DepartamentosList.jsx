@@ -23,18 +23,18 @@ const DepartamentosList = () => {
 
   return (
     <div className="departamentos-table-container">
-      <table className="departamentos-table">
+      <table className="departamentos-table departamentos-table-simple">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Nombre</th>
+            <th>Código</th>
+            <th>Departamento</th>
           </tr>
         </thead>
         <tbody>
-          {departamentos.map(dep => (
-            <tr key={dep.DepartamentoId}>
-              <td>{dep.DepartamentoId}</td>
-              <td>{dep.DepartamentoNombre}</td>
+          {departamentos.map((dep, idx) => (
+            <tr key={idx}>
+              <td>{dep.cod_Departamento}</td>
+              <td>{dep.departamento}</td>
             </tr>
           ))}
         </tbody>
