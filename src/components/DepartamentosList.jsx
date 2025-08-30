@@ -21,7 +21,6 @@ const DepartamentosList = () => {
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>{error}</p>;
 
-  console.log(departamentos);
   return (
     <div className="departamentos-table-container">
       <table className="departamentos-table">
