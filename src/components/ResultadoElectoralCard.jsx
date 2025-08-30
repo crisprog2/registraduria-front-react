@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './ResultadoElectoralCard.css';
+import GeocodedMap from './GeocodedMap';
 
 const iconCheck = (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{marginRight: 8, verticalAlign: 'middle'}}><circle cx="12" cy="12" r="12" fill="#e6f9f0"/><path d="M7 13.5L10.5 17L17 10.5" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -37,7 +39,11 @@ const ResultadoElectoralCard = ({ resultado }) => {
         </div>
         <div className="rec-block rec-block-orange">
           <div className="rec-block-title rec-block-title-orange">{iconMap}Ubicación</div>
-          <div className="rec-mapa-mock">Colegio San José</div>
+          <GeocodedMap
+            direccion={resultado.direccion_lugar_votacion}
+            ciudad={resultado.ciudad}
+            departamento={resultado.departamento}
+          />
         </div>
       </div>
     </div>
