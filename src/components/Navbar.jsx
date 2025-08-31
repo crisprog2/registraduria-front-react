@@ -38,6 +38,14 @@ const Navbar = ({ onInicioClick }) => {
               <li><Link to="/ciudades" onClick={closeMenu}>Consultar Lista</Link></li>
             </ul>
           </li>
+          <li className={dropdownOpen.rep ? 'dropdown open' : 'dropdown'}>
+            <span onClick={() => handleDropdown('rep')} tabIndex={0} aria-haspopup="true" aria-expanded={dropdownOpen.rep} role="button">Reportes ▼</span>
+            <ul className="dropdown-content">
+              <li><Link to="/reportes/edad" onClick={closeMenu}>Reporte por Edad</Link></li>
+              <li><Link to="/reportes/genero" onClick={closeMenu}>Reporte por Género</Link></li>
+              <li><Link to="/reportes/ciudad" onClick={closeMenu}>Reporte por Ciudad</Link></li>
+            </ul>
+          </li>
           <li><Link to="/acerca" onClick={closeMenu}>Acerca de</Link></li>
         </ul>
       </nav>
