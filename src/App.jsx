@@ -10,12 +10,14 @@ import ConsultaDepartamento from './pages/ConsultaDepartamento';
 import CiudadesPage from './pages/CiudadesPage';
 import AcercaDe from './pages/AcercaDe';
 import ReportePorGenero from './pages/ReportePorGenero';
+import Login from './pages/Login';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/departamentos" element={<DepartamentosPage />} />
         <Route path="/departamentos/consulta" element={<ConsultaDepartamento />} />
         <Route path="/ciudades" element={<CiudadesPage />} />
