@@ -1,58 +1,60 @@
-
 # Consulta de Votación - Frontend
 
-Este proyecto es una aplicación web desarrollada en React + Vite para consultar información de votación y listar departamentos consumiendo una API creada en Django.
+Aplicación web moderna desarrollada en React + Vite para consultar información electoral, listar departamentos y ciudades, y visualizar reportes, consumiendo una API Django protegida con JWT.
 
 ## Características principales
 
-- Página principal con formulario para consultar lugar de votación.
-- Menú de navegación moderno y responsivo con submenú de reportes.
-- Página dedicada para listar departamentos obtenidos desde una API REST.
-- Página de reportes: incluye reporte por género con gráfico de barras (Chart.js).
-- Navegación entre páginas usando React Router.
-- Estilos modernos y responsivos.
+- Consulta personalizada de información electoral por número de documento (pública).
+- Autenticación JWT: login, refresh automático y logout seguro.
+- Menú de navegación responsivo que muestra opciones según autenticación.
+- Listado de departamentos y ciudades (protegido, requiere login).
+- Reportes visuales (ej: por género) usando Chart.js (protegido).
+- Página informativa "Acerca de" siempre accesible.
+- Estilos modernos y experiencia de usuario optimizada.
 
 ## Instalación y uso
 
 1. Clona el repositorio o descarga el código fuente.
 2. Instala las dependencias:
-
-	```bash
-	npm install
-	```
-
+   npm install
 3. Inicia el servidor de desarrollo:
+   npm run dev
+4. Abre tu navegador en http://localhost:5173/
 
-	```bash
-	npm run dev
-	```
-
-4. Abre tu navegador en [http://localhost:5173](http://localhost:5173)
+### Requisitos del backend
+- El backend debe estar corriendo y permitir CORS desde el frontend.
+- Endpoints protegidos requieren autenticación JWT (token y refresh).
 
 ## Estructura del proyecto
 
-- `src/pages/HomePage.jsx`: Página principal con formulario y menú.
-- `src/pages/DepartamentosPage.jsx`: Página para listar departamentos.
-- `src/pages/CiudadesPage.jsx`: Página para listar ciudades.
-- `src/pages/ConsultaDepartamento.jsx`: Consulta un departamento por código usando función centralizada.
-- `src/pages/ReportePorGenero.jsx`: Reporte por género con gráfico de barras.
-- `src/components/DepartamentosList.jsx`: Componente que muestra los departamentos en tabla.
-- `src/components/CiudadesList.jsx`: Componente que muestra las ciudades en tabla.
-- `src/api/`: Lógica centralizada para consumir la API del backend (Axios). Todas las funciones para endpoints están aquí.
+- src/pages/HomePage.jsx: Página principal y búsqueda pública.
+- src/pages/Login.jsx: Página de login (autenticación JWT).
+- src/pages/DepartamentosPage.jsx: Listado de departamentos (protegido).
+- src/pages/CiudadesPage.jsx: Listado de ciudades (protegido).
+- src/pages/ConsultaDepartamento.jsx: Consulta de departamento por código.
+- src/pages/ReportePorGenero.jsx: Reporte visual por género (protegido).
+- src/pages/AcercaDe.jsx: Página informativa accesible siempre.
+- src/components/Navbar.jsx: Menú de navegación dinámico según autenticación.
+- src/components/ResultadoElectoralCard.jsx: Tarjeta de resultados de consulta.
+- src/components/DepartamentosList.jsx, src/components/CiudadesList.jsx: Tablas reutilizables.
+- src/context/AuthContext.jsx: Contexto global de autenticación y manejo de sesión.
+- src/api/: Lógica centralizada para consumir la API (Axios, interceptores, endpoints).
 
+## Autenticación y seguridad
 
-## Buenas prácticas y organización
+- El login se realiza en /login y requiere email y contraseña.
+- Al autenticarse, se guardan los tokens JWT (access y refresh) en localStorage.
+- Axios agrega automáticamente el token a cada petición protegida.
+- Si el access token expira, Axios usa el refresh token para obtener uno nuevo (flujo automático).
+- Al cerrar sesión, se eliminan los tokens y se redirige al login.
+- El menú y las rutas protegidas solo son accesibles si el usuario está autenticado.
 
-- Todas las llamadas a la API están centralizadas en la carpeta `src/api`.
-- No se usa Axios ni fetch directamente en páginas o componentes, solo funciones de la API.
-- Ejemplo: para consultar un departamento por código, usa `getDepartamentoByCodigo` desde `src/api/departamentos.js`.
-- Los estilos de las tablas de departamentos y ciudades están unificados para una apariencia consistente.
-- Los reportes consumen endpoints dedicados y presentan los datos con gráficos usando Chart.js.
+## Configuración de la API y variables
 
-## Configuración de la API
-
-La URL base de la API se configura en `src/api/index.js`. Por defecto apunta a `http://127.0.0.1:8000/api`.
-Asegúrate de que tu backend Django permita CORS para `http://localhost:5173`.
+- La URL base de la API se configura en src/api/index.js.
+- Por defecto apunta a http://127.0.0.1:8000/api.
+- Puedes cambiarla según tu entorno de desarrollo o producción.
+- Asegúrate de que el backend permita CORS para el dominio del frontend.
 
 ## Dependencias principales
 
@@ -63,6 +65,8 @@ Asegúrate de que tu backend Django permita CORS para `http://localhost:5173`.
 - chart.js
 - react-chartjs-2
 
-## Autor
+## Notas adicionales
 
-Christian (y equipo)
+- El proyecto sigue buenas prácticas de separación de lógica, componentes reutilizables y centralización de la autenticación.
+- El código es fácilmente extensible para agregar nuevos reportes, endpoints o roles de usuario.
+- Para desarrollo, puedes usar el backend local o remoto, solo ajusta la baseURL.
